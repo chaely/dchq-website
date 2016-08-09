@@ -1,0 +1,127 @@
+!!!
+%html
+  %head
+    %title #{@page_title}
+    %meta{:content => "#{@page_description}", :name => "description"}
+    %meta{:content => "#{@page_keywords}", :name => "keywords"}
+    %link{:href => "images/favicon.ico", :rel => "shortcut icon", :type => "image/x-icon"}
+    %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon-precomposed"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Montserrat:400,700", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:400,700,300", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "https://fonts.googleapis.com/css?family=Lato:400,700,300", :rel => "stylesheet", :type => "text/css"}
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+  %body
+    %header
+      .uk-container.uk-container-center
+        .uk-grid
+          .uk-width-3-10.uk-width-large-2-10.uk-width-medium-1-1
+            #logo
+              = link_to root_path do
+                = image_tag 'logo.png'
+          .uk-width-7-10.uk-width-large-8-10.uk-width-medium-1-1
+            %nav#mainmenu.uk-navbar
+              .uk-navbar-flip
+                %ul.uk-navbar-nav.uk-hidden-small
+                  %li
+                    = link_to 'Home', root_path, nav_item: :home
+                  %li.uk-parent{"data-uk-dropdown" => "{justify:'.uk-grid'}"}
+                    = link_to 'Features', features_path, nav_item: :features
+                    .uk-dropdown.uk-dropdown-navbar.idz-megamenu
+                      %ul.uk-grid{"data-uk-grid-margin" => ""}
+                        %li.uk-width-4-10.uk-width-medium-4-10
+                          %ul.uk-list
+                            %li
+                              = link_to features_path do
+                                .icon-wrap.circle.left
+                                  %i.uk-icon-shopping-cart
+                                %h5 Point of Sale
+                                %p.uk-nbfc Sell inventory items, miscellaneous products, events and servicing from a single interface.
+                            %li
+                              = link_to "#{features_path}#events" do
+                                .icon-wrap.circle.left
+                                  %i.uk-icon-calendar
+                                %h5 Event Management
+                                %p.uk-nbfc Manage dive courses, trips / events and generate print manifests on the go.
+                            %li
+                              = link_to "#{features_path}#crm" do
+                                .icon-wrap.circle.left
+                                  %i.uk-icon-users
+                                %h5 Customer Relationship Management
+                                %p.uk-nbfc Store customer history including sales, events and kit. Add notes, files and send emails.
+                        %li.uk-width-2-10.uk-width-medium-3-10
+                          %ul.uk-list.idz-list-arrow
+                            %h5 Other Services
+                            %li= link_to 'Servicing', "#{features_path}#servicing"
+                            %li= link_to 'Equipment Rental', "#{features_path}#equipment-rental"
+                            %li= link_to 'Purchase Orders', "#{features_path}#purchase-orders"
+                            %li= link_to 'Developer API', "#{features_path}#developer-api"
+                            %li= link_to 'Data Migration', "#{features_path}#data-migration"
+                            %li= link_to 'Switch from EVE', "#{features_path}#data-migration"
+
+                        %li.uk-width-4-10.uk-hidden-medium
+                          %h5 Why use Dive Centre HQ?
+                          %p Behind the product is a community with a wealth of experience in the dive industry. We know what it's like to run a dive business and the daily tasks you face. We also know software and how important it is to modern business.
+                          %p The product has been designed from the ground-up to meet the specific needs of businesses in the dive industry.
+                  %li.uk-parent{"data-uk-dropdown" => "{justify:'.uk-grid'}"}
+                    = link_to 'Add-ons', addons_path, nav_item: :addons
+                    .uk-dropdown.uk-dropdown-navbar.idz-megamenu
+                      %ul.uk-grid{"data-uk-grid-margin" => ""}
+                        %li.uk-width-6-10.uk-width-medium-5-10
+                          %ul.uk-list
+                            %li
+                              = link_to addons_scubatribe_path do
+                                .icon-wrap.circle.left
+                                  = image_tag 'addon-scubatribe.gif'
+                                %h5 ScubaTribe
+                                %p.uk-nbfc Verified diver reviews you can trust. ScubaTribe provides an invaluable service to both divers and dive operations around the world.
+                            %li
+                              = link_to addons_xero_path do
+                                .icon-wrap.circle.left
+                                  = image_tag 'addon-xero.gif'
+                                %h5 Xero Accounting
+                                %p.uk-nbfc Xero is easy to use online accounting software that’s designed specifically for small businesses. Seamlessly send accounting data to Xero.
+                            %li
+                              = link_to addons_mailchimp_path do
+                                .icon-wrap.circle.left
+                                  = image_tag 'addon-mailchimp.gif'
+                                %h5 MailChimp
+                                %p.uk-nbfc Send marketing emails, automated messages, and targeted campaigns. Also includes detailed reports help you keep improving over time.
+                        %li.uk-width-4-10.uk-hidden-medium
+                          %h5 Partner Network
+                          %p We partner with companies that serve, educate, and empower our customers. Our network of preferred partners enables you to connect the apps you use, automate tasks, get more out of your data.
+                          %p Our range of partners include dive-specific services as well as accounting software and email marketing tools. If you need to integrate with a 3rd party that is not currently supported, you can use the Developer API to extend Dive Centre HQ.
+                  %li= link_to 'Install', install_path, nav_item: :pricing
+                  %li= link_to 'Source Code', 'https://github.com/dchq/dchq-core'
+
+                %a.uk-navbar-toggle.uk-visible-small{"data-uk-offcanvas" => "", :href => "#mobile-nav"}
+            #mobile-nav.uk-offcanvas
+              .uk-offcanvas-bar
+                %ul.uk-nav.uk-nav-offcanvas.uk-nav-parent-icon{"data-uk-nav" => ""}
+                  %li= link_to 'Home', root_path
+    = yield
+    %footer
+      .uk-container.uk-container-center.footer-bg-img
+        .uk-grid
+          .uk-width-4-10.uk-width-small-1-1
+            #logo-footer= image_tag 'logo_footer.png'
+            %p.uk-margin-large-bottom
+              Dive Centre HQ is an open source project.
+              %br
+              = link_to 'Source code available on Github', 'https://github.com/dchq/dchq-core'
+          .uk-width-6-10
+            .uk-grid
+              .uk-width-1-3.uk-width-small-1-1.idz-margin-bottom-ml
+                %h4 Community
+                %ul.uk-list
+                  %li= link_to 'Slack Channel', 'https://www.slack.com'
+                  %li= link_to 'Issue Tracker', 'https://github.com/dchq/dchq-core/issues'
+                  %li= link_to 'Source Code', 'https://github.com/dchq/dchq-core'
+              .uk-width-1-3.uk-width-small-1-1.idz-margin-bottom-ml
+                %h4 Information
+                %ul.uk-list
+                  %li= link_to 'Wiki & Docs', 'https://github.com/dchq/dchq-core/wiki'
+                  %li= link_to 'API Docs', 'https://github.com/dchq/dchq-core/apidoc'
+
+      %a.to-top.uk-icon-chevron-up{"data-uk-smooth-scroll" => "", :href => "#top"}
+    = javascript_include_tag 'application'

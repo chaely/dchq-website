@@ -1,0 +1,41 @@
+- @page_title = "Contact"
+
+%section#pagetitle
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-1.uk-width-small-1-1
+        %h3 Contact
+
+
+%section.uk-padding.uk-margin-top
+  .uk-container.uk-container-center
+    .uk-grid.uk-margin-large-bottom
+      .uk-width-7-10.uk-width-medium-1-1.uk-width-small-1-1
+        %h1 Contact Us
+        %p
+          %strong Need technical support or help?
+          %br
+          Log into
+          = link_to 'https://app.divecentrehq.com', 'https://app.divecentrehq.com'
+          and click the Get Support link in the top right navigation.
+        %p Have a general question? It may already be answered in the #{ link_to 'Knowledge Centre', knowledge_path }.
+        %hr
+        %p For all other queries, please use the Help widget in the bottom right of every page. This will securely transmit your query to our support team. We aim to respond to all queries within 24 hours.
+
+
+
+      #idz-single-margin-top.uk-width-3-10.uk-width-medium-1-1.uk-width-small-1-1
+        %aside
+          #newsletter-bg-img.uk-panel.uk-panel-box.panel-color.grey.uk-text-center
+            %h3.uk-text-contrast
+              Email
+              %br>/
+              Newsletter
+            %p.uk-text-contrast
+              Sign up to receive our
+              %br>
+              latest updates
+            %form#newsletter-form.uk-form.uk-margin-bottom
+              %fieldset
+                %input.uk-width-1-1{:placeholder => "Type your email address", :type => "email"}/
+                %button.uk-button.uk-button-small.idz-button-blue.uk-width-1-1 Subscribe

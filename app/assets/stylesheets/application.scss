@@ -1,0 +1,22 @@
+/*
+ *= require uikit
+ *= require mediaquery
+ *= require style
+ *= require components/slideshow
+ *= require components/dotnav
+ *= require components/small-icon
+ *= require font-awesome
+ *= require_self
+ */
+
+ .bg-parallax1-home {
+   background-image: image-url("home_bg_parallax1.jpg");
+   background-position: 50% -73.01px;
+   background-repeat: no-repeat;
+ }
+
+ .bg-parallax2-home {
+   background-image: image-url("signup_background.jpg");
+   background-position: 50% -73.01px;
+   background-repeat: no-repeat;
+ }

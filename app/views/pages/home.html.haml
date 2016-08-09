@@ -1,0 +1,144 @@
+- @page_title = 'Dive Centre HQ: Web Software to Manage Your Scuba Dive Shop'
+- @page_description = 'Trusted by business owners worldwide, Dive Centre HQ is the easiest way to manage your scuba dive shop. Web based software for managing events, customers, staff and vendors.'
+- @page_keywords = 'Dive Centre HQ, Dive Shop Software, Scuba Software, Dive Software'
+- active_nav_item :home
+
+%section#slideshow-container
+  .uk-slidenav-position{"data-uk-slideshow" => "{autoplay:true}"}
+    %ul.uk-slideshow.uk-overlay-active
+      %li
+        = image_tag 'slider-1.jpg'
+        .uk-overlay-panel.uk-overlay-bottom.uk-overlay-slide-fade
+          .uk-container.uk-container-center
+            .uk-grid
+              .uk-width-1-2
+                .slide-content1
+                  %h1.uk-margin-small-bottom Point of Sale, Event Management & CRM software for dive stores
+                  %hr/
+                  .uk-grid
+                    .uk-width-1-2
+                      %ul.uk-list.uk-text-large
+                        %li
+                          %strong Web & mobile
+                          apps
+                        %li
+                          %strong All agencies
+                          supported
+
+                    .uk-width-1-2
+                      %ul.uk-list.uk-text-large
+                        %li
+                          %strong Open Source
+                        %li
+                          %strong Migrate from EVE
+
+%section
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-2.uk-width-medium-1-1.uk-width-small-1-1
+        #get-started-wrap
+          = link_to features_path, class: 'button medium' do
+            %i.uk-icon-chevron-circle-right
+            Learn More about DCHQ
+
+      .uk-width-1-2.uk-width-medium-1-1.uk-width-small-1-1.section-grey
+        %h4.uk-margin-medium-top{:align => "center"}
+          = form_tag charges_path do
+            - if flash[:error].present?
+              = flash[:error]
+            %script.stripe-button{"data-amount" => "2000", "data-description" => "Donation (£20)", "data-currency" => "GBP", "data-key" => "#{Rails.configuration.stripe[:publishable_key]}", "data-name" => "Dive Centre HQ", "data-label" => "Donate to Open Source Software", "data-panel-label" => "Donate", "data-bitcoin" => "true", :src => "https://checkout.stripe.com/checkout.js"}
+%section#features.uk-padding
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-1.uk-text-center.uk-margin-bottom
+        %h1.uk-margin-small-bottom Tools you need to help run your Dive Business
+        %p.uk-text-large.uk-margin-small-top DCHQ delivers exceptional software to make your everyday operations run smoothly!
+      %p.uk-margin-small-top.uk-text-large{:style => "text-align: center;"} Dive Centre HQ is a complete dive shop management system delivering point of sale, event management and customer relationship facilities across web and mobile devices. Dive Centre HQ was built to help you quickly get your business off the ground & use best-of-breed technology to support your operations. Whether you need just a Point of Sale tool or a fully-integrated event management, CRM and servicing platform, Dive Centre HQ is here to help.
+%section.uk-padding.section-grey
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-1.uk-text-center.uk-margin-large-bottom
+        %h1.uk-margin-large-bottom Product highlights and core features
+        .uk-grid.uk-grid-divider
+          .uk-width-1-3.uk-width-medium-1-2.uk-width-small-1-1
+            %h4.uk-margin-medium-top Point of Sale & Inventory
+            %p.text-width90.uk-margin-medium-bottom Sell inventory items, miscellaneous products, events and more. Fully integrated with core modules inc. events and servicing.
+          .uk-width-1-3.uk-width-medium-1-2.uk-width-small-1-1
+            %h4.uk-margin-medium-top Event Management
+            %p.text-width90.uk-margin-medium-bottom Manage your dive courses, trips or other events, generate print manifests or use your smart phone to see what's happening.
+          .uk-width-1-3.uk-hidden-medium.uk-hidden-small
+            %h4.uk-margin-medium-top Customer Records
+            %p.text-width90.uk-margin-medium-bottom Store customer history including sales, events and kit they own. Add notes, files and keep records of dive incidents.
+        %hr.uk-grid-divider.uk-margin-remove.uk-hidden-small/
+        .uk-grid.uk-grid-divider
+          .uk-width-1-3.uk-width-medium-1-2.uk-width-small-1-1
+            %h4.uk-margin-medium-top Servicing
+            %p.text-width90.uk-margin-medium-bottom Book services, track progress and send status reports to the customer. Seamlessly complete the sale in the Point of Sale.
+          .uk-width-1-3.uk-width-medium-1-2.uk-width-small-1-1
+            %h4.uk-margin-medium-top Equipment Rental
+            %p.text-width90.uk-margin-medium-bottom Track rental inventory, allocate rentals to customers and ensure your kit is returned on-time and checked in.
+          .uk-width-1-3.uk-hidden-medium.uk-width-small-1-1
+            %h4.uk-margin-medium-top Reporting
+            %p.text-width90.uk-margin-medium-bottom Run on-demand reports based on sales, events and end of day totals. Sync finance reports to Xero or export to QIF format.
+%section#addons
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-2.uk-width-small-1-1.uk-padding
+        %h1.uk-margin-top.uk-margin-small-bottom Make it your own with Add-ons and a RESTful API
+        %p.uk-text-large.uk-margin-medium-top.uk-margin-small-bottom We believe in helping you make use of best-in-class technology, so by integrating with 3rd party services, you can tailor Dive Centre HQ to meet your needs. Whether you want to leverage the Xero accounting system integration or sync your customers to Mailchimp, its as easy as clicking a button.
+        %p.uk-margin-large-bottom And if you're more technically minded and want to access & manipulate data through custom applications, you can achieve this using our RESTful API. There are already a number of Dive Stores that have built custom integrations for online bookings as well as their own mobile offline applications.
+      .uk-width-1-2.uk-hidden-small
+        = image_tag 'connect.png', class: 'uk-margin-large-to'
+
+%section#support
+  #bg-parallax1.bg-parallax1-home
+    .uk-container.uk-container-center.uk-padding
+      .uk-grid
+        .uk-width-1-1.uk-text-center.uk-text-contrast
+          %h1.uk-text-contrast.uk-margin-small-bottom An Open Source Community That Stands by You
+          %p.uk-text-large.uk-margin-small-top.text-width70 We're passionate about the dive industry and have a wealth of shared knowledge amongst our community, giving you the ability to succeed with the software. There is no cost to use Dive Centre HQ. The MIT License ensures you can run and/or modify the software in any way you see fit.
+          .uk-grid.uk-margin-large-top
+            .uk-width-1-4.uk-width-medium-1-2.uk-width-small-1-1
+              .icon-wrap.center
+                %i.smico-processor
+              %h3.uk-text-contrast Great Features
+              %p Customer feedback drives the innovation of the product. We strive to deliver exceptional software.
+            .uk-width-1-4.uk-width-medium-1-2.uk-width-small-1-1
+              .icon-wrap.center
+                %i.smico-shield
+              %h3.uk-text-contrast Robust Security
+              %p Pro-active automated & human monitoring wiuth regular security patching.
+            .uk-width-1-4.uk-width-medium-1-2.uk-width-small-1-1
+              .icon-wrap.center
+                %i.smico-speed
+              %h3.uk-text-contrast Host in your Cloud
+              %p Deploy DCHQ onto your own servers or use any one of our recommended cloud hosting solutions.
+            .uk-width-1-4.uk-width-medium-1-2.uk-width-small-1-1
+              .icon-wrap.center
+                %i.smico-help
+              %h3.uk-text-contrast Friendly Community
+              %p Our community are based around the world and are regularly updating the software.
+
+%section
+  #bg-parallax2.bg-parallax2-home.uk-margin.uk-margin-bottom-remove{"data-uk-parallax" => "{bg: '-200'}"}
+    .uk-container.uk-container-center.uk-padding
+      .uk-grid
+
+        .uk-width-1-1.uk-text-center
+          %h1.uk-margin-small-bottom Install for Free on Heroku
+          %p.uk-text-large.uk-margin-small-top
+            %strong We've made it as easy as clicking a button to get your own version of Dive Centre HQ up and running. It will run on Heroku.com on the free tier.
+        .uk-width-1-1.uk-text-center.uk-margin-top
+          %a{:href => "https://heroku.com/deploy?template=https://github.com/dchq/dchq-core/tree/master"}
+            = image_tag 'https://www.herokucdn.com/deploy/button.svg', style: 'height: 60px'
+
+
+        .uk-width-1-1.uk-text-center.uk-margin-large-top
+          %h1.uk-margin-small-bottom Want a quick test-drive?
+          %p.uk-text-large.uk-margin-small-top
+            %strong Want to give the software a go without setting up your own servers? Simply use the details below to access the sandbox. Please be aware the sandbox is reset every 72 hours.
+        .uk-width-1-1.uk-text-center.uk-margin-large-top
+          %a.uk-button.uk-button-large.uk-button-success{:href => "http://demo.divecentrehq.com/users/sign_up"}
+            %i.uk-icon-cloud
+            Test out Dive Centre HQ
+        %hr

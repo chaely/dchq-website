@@ -1,0 +1,33 @@
+- @page_title = "Install Dive Centre HQ on Heroku"
+
+
+%section#pagetitle
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-1.uk-width-small-1-1
+        %h3 Install & Deploy to your own servers
+
+%section.uk-padding.uk-margin-top
+  .uk-container.uk-container-center
+    .uk-grid
+      .uk-width-1-1
+        %h1.uk-margin-top-remove.uk-margin-bottom-remove Open Source software under your control
+        %p.uk-text-large.uk-margin-top-remove Install on Heroku, Amazon Web Services or your own server.
+        %p We strongly believe in giving back to the community, and the open source approach behind Dive Centre HQ is just one of the ways we achieve this. There are no licensing costs to running Dive Centre HQ; simply find a hosting provider and install the software. If you're not technically savvy, you can get one of our partners to install it for a one-time fee.
+        %p The easiest way to get started at absolutely no cost is to deploy to Heroku. Heroku is a cloud platform that lets companies build, deliver, monitor and scale apps — it's the fastest way to go from idea to URL, bypassing all those infrastructure headaches.
+        %p Use the one-click installer below to setup your own copy of Dive Centre HQ. Once deployed, simply follow the link in the Heroku control panel.
+        .uk-text-center
+          %a{:href => "https://heroku.com/deploy?template=https://github.com/dchq/dchq-core/tree/master"}
+            = image_tag 'https://www.herokucdn.com/deploy/button.svg', style: 'height: 60px'
+
+
+
+%section.section-purple
+  .uk-container.uk-container-center.abstract-bg-img
+    .uk-grid.uk-padding.uk-text-contrast
+      .uk-width-1-1.uk-text-center
+        %p.uk-text-large.text-width70
+          Need a hand with installation? We offer a setup & configuration service for a one-time fee.
+        %a.uk-button.uk-button-small.idz-button-outline.uk-margin-medium-top.uk-margin-large-bottom{:href => "mailto:support@divecentrehq.com"}
+          Contact us about helping with installation
+          %i.uk-icon-chevron-circle-right
